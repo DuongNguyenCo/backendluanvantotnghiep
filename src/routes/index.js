@@ -20,6 +20,9 @@ let initWebRoutes = (app) => {
     router.post('/api/v2/candidate/signIn', candidate.login);
     router.post('/api/v2/candidate/signUp', candidate.register);
     router.get('/api/v2/candidate/getById/:id', candidate.getById);
+    router.post('/api/v2/candidate/forgotPassword', candidate.forgotPassword);
+    router.post('/api/v2/candidate/resetPassword', candidate.resetPassword);
+    router.get('/api/v2/candidate/getJobApply/:id', candidate.getJobApply);
 
     //post
     router.get('/api/v2/post/getall', post.getAll);

@@ -7,7 +7,6 @@ import initWebRoutes from "./routes/index.js";
 import upload from "express-fileupload";
 dotenv.config();
 
-let use = "a";
 let app = express();
 
 app.use(upload());
