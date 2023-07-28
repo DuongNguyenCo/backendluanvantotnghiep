@@ -56,7 +56,7 @@ const deleteEmail = (email) => {
                 where: {
                     id: email.id,
                 },
-            });
+            });lo
             if (dlt) {
                 const data = await db.email_tamplate.findAll({
                     attributes: ['id', 'id_business', 'name', 'content', 'createdAt'],

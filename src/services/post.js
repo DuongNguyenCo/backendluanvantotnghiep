@@ -446,13 +446,13 @@ const deletePost = (post) => {
                     id: post.id_post,
                 },
             });
-            const data = await db.post.destroy({ where: { id: post.id_post }, force: true });
+            const data = await db.post.destroy({ where: { id: post.id_post } });
 
-            if (data) {
+            if (data === 1) {
                 Promise.all([
-                    await db.job_language.destroy({ where: { id_job: a }, force: true }),
-                    await db.job_address.destroy({ where: { id_job: a }, force: true }),
-                    await db.job.destroy({ where: { id: a }, force: true }),
+                    await db.job_language.destroy({ where: { id_job: a.dataValues.id_job }, force: true }),
+                    await db.job_address.destroy({ where: { id_job: a.dataValues.id_job }, force: true }),
+                    await db.job.destroy({ where: { id: a.dataValues.id_job }, force: true }),
                 ]);
 
                 // const data1 = await db.post.findAll({
